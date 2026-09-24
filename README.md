@@ -3,6 +3,7 @@ Welcome to your new dbt project!
 Traditional ETL transforms data before loading it (in a separate processing engine like Spark). Modern ELT loads raw data into the warehouse first, then transforms it inside the warehouse using SQL — which is what dbt orchestrates. This shift happened because cloud warehouses (Snowflake, BigQuery, Redshift) became powerful enough to do transformation work themselves, and doing it there means one less system to manage, and better use of the warehouse's built-in compute.
 The data flow you'll build:
 
+'''
 NYC TLC Public Data (Parquet files)
         │
         │  EXTRACT + LOAD (raw, untransformed)
@@ -23,6 +24,7 @@ Snowflake: MARTS schema  (fct_trips, dim_vendor, dim_date...)
         │
         ▼
    BI tool / analysis (this is what a dashboard or analyst 
+'''
 
 ### Using the starter project
 
