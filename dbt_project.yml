@@ -1,0 +1,21 @@
+# dbt_project.yml
+name: 'nyc_taxi_elt'
+version: '1.0.0'
+config-version: 2
+
+profile: 'nyc_taxi_elt'   # must match the profile name in profiles.yml
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+models:
+  nyc_taxi_elt:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+      +schema: intermediate
+    marts:
+      +materialized: table
+      +schema: marts
